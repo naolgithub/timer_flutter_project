@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:timer_flutter_project/view/timer_page.dart';
 
 class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Timer',
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(109, 234, 255, 1),
-        colorScheme: ColorScheme.light(
+        primaryColor: const Color.fromRGBO(109, 234, 255, 1),
+        colorScheme: const ColorScheme.light(
           secondary: Color.fromRGBO(72, 74, 126, 1),
         ),
       ),
