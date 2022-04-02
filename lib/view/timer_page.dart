@@ -58,8 +58,6 @@ class TimerText extends StatelessWidget {
     );
   }
 }
-
-
 class Action extends StatelessWidget {
   const Action({Key? key}) : super(key: key);
   @override
@@ -81,27 +79,32 @@ class Action extends StatelessWidget {
             if (state is TimerRunInProgress) ...[
               FloatingActionButton(
                 child: const Icon(Icons.pause),
-                onPressed: () => context.read<TimerBloc>().add(const TimerPaused()),
+                onPressed: () =>
+                    context.read<TimerBloc>().add(const TimerPaused()),
               ),
               FloatingActionButton(
                 child: const Icon(Icons.replay),
-                onPressed: () => context.read<TimerBloc>().add(const TimerReset()),
+                onPressed: () =>
+                    context.read<TimerBloc>().add(const TimerReset()),
               ),
             ],
             if (state is TimerRunPause) ...[
               FloatingActionButton(
                 child: const Icon(Icons.play_arrow),
-                onPressed: () => context.read<TimerBloc>().add(const TimerResumed()),
+                onPressed: () =>
+                    context.read<TimerBloc>().add(const TimerResumed()),
               ),
               FloatingActionButton(
                 child: const Icon(Icons.replay),
-                onPressed: () => context.read<TimerBloc>().add(const TimerReset()),
+                onPressed: () =>
+                    context.read<TimerBloc>().add(const TimerReset()),
               ),
             ],
             if (state is TimerRunComplete) ...[
               FloatingActionButton(
                 child: const Icon(Icons.replay),
-                onPressed: () => context.read<TimerBloc>().add(const TimerReset()),
+                onPressed: () =>
+                    context.read<TimerBloc>().add(const TimerReset()),
               ),
             ]
           ],
